@@ -8,8 +8,14 @@ import scalafx.scene.paint.Color._
 import scalafx.scene.shape.Rectangle
 
 // Creates a new unique played based on name and color
-class Player(val name: String, var color: Color) {
+class Player(var name: String, var color: Color) {
+
   this.color = pickColor()
+  this.name = setName(name)
+
+  def setName(input: String): String = {
+    input
+  }
 
   // Selects a random color to assign to the player
   def pickColor(): Color = {
