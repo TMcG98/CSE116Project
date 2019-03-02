@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CSE116Project.iml" filepath="$PROJECT_DIR$/.idea/CSE116Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PaperIO/PaperIO.iml" filepath="$PROJECT_DIR$/PaperIO/PaperIO.iml" />
     </modules>
   </component>
 </project>
