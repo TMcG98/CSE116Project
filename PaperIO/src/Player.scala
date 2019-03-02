@@ -1,18 +1,20 @@
+
 import javafx.event.ActionEvent
 import scalafx.Includes._
 import scalafx.application.JFXApp
 import scalafx.scene.Scene
+import scalafx.scene.paint.Color
 import scalafx.scene.paint.Color._
 import scalafx.scene.shape.Rectangle
 
-class Player(val name: String) {
+// Creates a new unique played based on name and color
+class Player(val name: String, var color: Color) {
+  this.color = pickColor()
 
-  var color = Red
-
-  def pickColor(): Unit = {
+  // Selects a random color to assign to the player
+  def pickColor(): Color = {
     val c = scala.util.Random
     val r = c.nextInt(8)
-    print(r)
     if(r == 0) {
       color = Red
     } else if (r == 1) {
@@ -30,6 +32,7 @@ class Player(val name: String) {
     } else if (r == 7) {
       color = Gold
     }
+    color
   }
 
 }
