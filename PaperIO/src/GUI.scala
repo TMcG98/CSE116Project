@@ -13,16 +13,6 @@ object GUI extends JFXApp {
 
   var game = new Game()
 
-  def buttonPressed(): Unit = {
-    val name: String = inputDisplay.text.value
-    onAction = new EventHandler[ActionEvent]{
-      override def handle(event: ActionEvent): Unit = {
-        var player = new Player(name, game.pickColor())
-      }
-    }
-    //this.Player.setName(name)
-  }
-
   val inputDisplay: TextField = new TextField {
     style = "-fx-font: 18 ariel;"
   }
@@ -39,6 +29,15 @@ object GUI extends JFXApp {
     style = "-fx-font: 28 ariel;"
     text = "Set Name"
     onAction = (event: ActionEvent) => buttonPressed()
+  }
+
+  def buttonPressed(): Unit = {
+    val name: String = inputDisplay.text.value
+    onAction = new EventHandler[ActionEvent]{
+      override def handle(event: ActionEvent): Unit = {
+        var player = new Player(name, game.pickColor())
+      }
+    }
   }
 
   this.stage = new PrimaryStage {
