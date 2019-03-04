@@ -1,4 +1,4 @@
-import javafx.event.ActionEvent
+import javafx.event.{ActionEvent, EventHandler}
 import scalafx.Includes._
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
@@ -11,8 +11,15 @@ import scalafx.scene.shape.Rectangle
 
 object GUI extends JFXApp {
 
+  var game = new Game()
+
   def buttonPressed(): Unit = {
     val name: String = inputDisplay.text.value
+    onAction = new EventHandler[ActionEvent]{
+      override def handle(event: ActionEvent): Unit = {
+        var player = new Player(name, game.pickColor())
+      }
+    }
     //this.Player.setName(name)
   }
 
@@ -36,7 +43,10 @@ object GUI extends JFXApp {
 
   this.stage = new PrimaryStage {
     title = "CSE.io"
+    width = 600
+    height = 600
     scene = new Scene() {
+      fill = LightGreen
       content = List(
         new VBox() {
           children = List(inputDisplay, button, outputDisplay)
