@@ -2,12 +2,14 @@ import javafx.event.{ActionEvent, EventHandler}
 import scalafx.Includes._
 import scalafx.application.JFXApp
 import scalafx.application.JFXApp.PrimaryStage
+import scalafx.scene
 import scalafx.scene.Scene
 import scalafx.scene.control.{Button, TextField}
 import scalafx.scene.layout.VBox
 import scalafx.scene.paint.Color
 import scalafx.scene.paint.Color._
 import scalafx.scene.shape.Rectangle
+import scalafx.stage.Stage
 
 object GUI extends JFXApp {
 
@@ -38,8 +40,8 @@ object GUI extends JFXApp {
 
   this.stage = new PrimaryStage {
     title = "CSE.io"
-    width = 600
-    height = 600
+    width = 1280
+    height = 720
     scene = new Scene() {
       fill = LightGreen
       content = List(
