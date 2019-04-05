@@ -29,7 +29,7 @@ object GUI extends JFXApp {
     minWidth = 100
     minHeight = 30
     style = "-fx-font: 28 ariel;"
-    text = "Set Name"
+    text = "Set Name and Play!"
     onAction = (event: ActionEvent) => buttonPressed()
   }
 
